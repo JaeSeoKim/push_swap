@@ -6,7 +6,7 @@
 #    By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/24 20:10:49 by jaeskim           #+#    #+#              #
-#    Updated: 2021/03/20 12:37:09 by jaeskim          ###   ########.fr        #
+#    Updated: 2021/03/20 13:02:46 by jaeskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,6 +77,7 @@ SRC_MEMORY = $(addprefix $(SRC_MEMORY_DIR)/, \
 	ft_memcpy.c	\
 	ft_memmove.c	\
 	ft_memset.c	\
+	ft_malloc.c	\
 )
 
 SRC_STRING_DIR = $(SRC_DIR)/string
@@ -137,7 +138,7 @@ SRC_D_LST = $(addprefix $(SRC_D_LST_DIR)/, \
 	ft_d_size.c	\
 	ft_d_lstlast.c	\
 	ft_d_lstdelone.c	\
-	ft_d_lstclear	\
+	ft_d_lstclear.c	\
 )
 
 SRCS = \
