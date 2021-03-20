@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_d_lstadd_back.c                                 :+:      :+:    :+:   */
+/*   print_stacks.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/20 12:23:56 by jaeskim           #+#    #+#             */
-/*   Updated: 2021/03/20 21:08:36 by jaeskim          ###   ########.fr       */
+/*   Created: 2021/03/20 15:42:23 by jaeskim           #+#    #+#             */
+/*   Updated: 2021/03/20 15:46:32 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "stack.h"
 
-void	ft_d_lstadd_back(t_d_list **lst, t_d_list *new_list)
+void	print_stacks(t_d_list *stack_a, t_d_list *stack_b)
 {
-	t_d_list	*last;
-
-	if (*lst == NULL)
+	ft_putendl_fd("[STACK_A]", 1);
+	while (stack_a)
 	{
-		*lst = new_list;
-		return ;
+		ft_putnbr_fd((int)stack_a->content, 1);
+		ft_putchar_fd('\n', 1);
+		stack_a = stack_a->next;
 	}
-	last = ft_d_lstlast(*lst);
-	last->next = new_list;
-	new_list->prev = last;
+	ft_putendl_fd("[STACK_B]", 1);
+	while (stack_b)
+	{
+		ft_putnbr_fd((int)stack_b->content, 1);
+		ft_putchar_fd('\n', 1);
+		stack_b = stack_b->next;
+	}
 }

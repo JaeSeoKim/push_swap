@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_d_lstadd_back.c                                 :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/20 12:23:56 by jaeskim           #+#    #+#             */
-/*   Updated: 2021/03/20 21:08:36 by jaeskim          ###   ########.fr       */
+/*   Created: 2021/03/20 15:33:45 by jaeskim           #+#    #+#             */
+/*   Updated: 2021/03/20 21:56:15 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "stack.h"
 
-void	ft_d_lstadd_back(t_d_list **lst, t_d_list *new_list)
+void	push(t_d_list **from, t_d_list **to)
 {
-	t_d_list	*last;
+	t_d_list	*tmp;
 
-	if (*lst == NULL)
-	{
-		*lst = new_list;
+	if (*from == NULL)
 		return ;
-	}
-	last = ft_d_lstlast(*lst);
-	last->next = new_list;
-	new_list->prev = last;
+	tmp = *from;
+	*from = (*from)->next;
+	if (*from)
+		(*from)->prev = NULL;
+	if (*to)
+		(*to)->prev = tmp;
+	tmp->next = *to;
+	*to = tmp;
+	(*to)->prev = NULL;
 }

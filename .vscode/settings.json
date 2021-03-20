@@ -3,6 +3,7 @@
     "functional": "c",
     "get_next_line.h": "c",
     "libft.h": "c",
-    "stack.h": "c"
+    "stack.h": "c",
+    "checker.h": "c"
   }
 }
