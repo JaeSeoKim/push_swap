@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_type.h                                      :+:      :+:    :+:   */
+/*   ft_d_lst_type.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/26 00:45:32 by jaeskim           #+#    #+#             */
-/*   Updated: 2021/03/20 12:25:47 by jaeskim          ###   ########.fr       */
+/*   Created: 2021/03/20 11:46:37 by jaeskim           #+#    #+#             */
+/*   Updated: 2021/03/20 11:55:10 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LST_TYPE_H
-# define FT_LST_TYPE_H
+#ifndef FT_D_LST_TYPE_H
+# define FT_D_LST_TYPE_H
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <limits.h>
+# include "libft.h"
 
-typedef struct s_list
+typedef struct s_d_list
 {
+	struct s_d_list	*next;
+	struct s_d_list	*prev;
 	void			*content;
-	struct s_list	*next;
-}					t_list;
+}				t_d_list;
 
 #endif

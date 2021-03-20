@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_type.h                                      :+:      :+:    :+:   */
+/*   libft_type.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/26 00:45:32 by jaeskim           #+#    #+#             */
-/*   Updated: 2021/03/20 12:25:47 by jaeskim          ###   ########.fr       */
+/*   Created: 2020/11/16 16:46:47 by jaeskim           #+#    #+#             */
+/*   Updated: 2021/03/20 11:52:04 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LST_TYPE_H
-# define FT_LST_TYPE_H
+#ifndef LIBFT_TYPE_H
+# define LIBFT_TYPE_H
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <limits.h>
+typedef long long			t_ll;
+typedef unsigned long		t_ul;
+typedef unsigned long long	t_ull;
+typedef unsigned int		t_ui;
+typedef unsigned char		t_uc;
+typedef unsigned short		t_us;
+typedef long				t_l;
 
-typedef struct s_list
+typedef struct s_not_use
 {
-	void			*content;
-	struct s_list	*next;
-}					t_list;
+	t_l			l;
+	t_ll		ll;
+	t_ul		ul;
+	t_ull		ull;
+	t_ui		ui;
+	t_uc		uc;
+	t_us		us;
+}				t_not_use;
 
 #endif

@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_type.h                                      :+:      :+:    :+:   */
+/*   ft_d_size.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/26 00:45:32 by jaeskim           #+#    #+#             */
-/*   Updated: 2021/03/20 12:25:47 by jaeskim          ###   ########.fr       */
+/*   Created: 2021/03/20 12:19:28 by jaeskim           #+#    #+#             */
+/*   Updated: 2021/03/20 12:26:42 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LST_TYPE_H
-# define FT_LST_TYPE_H
+#include "libft.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <limits.h>
-
-typedef struct s_list
+int	ft_d_size(t_d_list *lst)
 {
-	void			*content;
-	struct s_list	*next;
-}					t_list;
+	int		cnt;
 
-#endif
+	cnt = 0;
+	while (lst)
+	{
+		lst = lst->next;
+		++cnt;
+	}
+	return (cnt);
+}

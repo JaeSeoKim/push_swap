@@ -6,7 +6,7 @@
 #    By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/24 20:10:49 by jaeskim           #+#    #+#              #
-#    Updated: 2021/03/20 10:34:22 by jaeskim          ###   ########.fr        #
+#    Updated: 2021/03/20 12:37:09 by jaeskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,15 +34,17 @@ OBJ_DIR = obj
 
 HEADERS = $(addprefix $(INC_DIR)/, \
 	libft.h	\
+	libft_type.h	\
 	ft_lst.h	\
 	ft_lst_type.h	\
 	ft_string.h	\
-	ft_libft_type.h	\
 	ft_write.h	\
 	ft_math.h	\
 	ft_type.h	\
 	ft_memory.h	\
 	get_next_line.h	\
+	ft_d_lst.h	\
+	ft_d_lst_type.h	\
 )
 
 SRC_LST_DIR = $(SRC_DIR)/lst
@@ -127,6 +129,17 @@ SRC_GNL = $(addprefix $(SRC_GNL_DIR)/, \
 	get_next_line.c	\
 )
 
+SRC_D_LST_DIR = $(SRC_DIR)/d_list
+SRC_D_LST = $(addprefix $(SRC_D_LST_DIR)/, \
+	ft_d_lstnew.c	\
+	ft_d_lstadd_front.c	\
+	ft_d_lstadd_back.c	\
+	ft_d_size.c	\
+	ft_d_lstlast.c	\
+	ft_d_lstdelone.c	\
+	ft_d_lstclear	\
+)
+
 SRCS = \
 	$(SRC_LST)	\
 	$(SRC_MATH)	\
@@ -134,7 +147,8 @@ SRCS = \
 	$(SRC_STRING)	\
 	$(SRC_TYPE)	\
 	$(SRC_WRITE)	\
-	$(SRC_GNL)
+	$(SRC_GNL)	\
+	$(SRC_D_LST)
 
 vpath %.c \
 	$(SRC_DIR)	\
@@ -144,7 +158,8 @@ vpath %.c \
 	$(SRC_STRING_DIR)	\
 	$(SRC_TYPE_DIR)	\
 	$(SRC_WRITE_DIR)	\
-	$(SRC_GNL_DIR)
+	$(SRC_GNL_DIR)	\
+	$(SRC_D_LST_DIR)
 
 OBJS = $(addprefix $(OBJ_DIR)/, $(notdir $(SRCS:.c=.o)))
 

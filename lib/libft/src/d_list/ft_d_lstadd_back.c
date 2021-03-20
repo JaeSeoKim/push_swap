@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_type.h                                      :+:      :+:    :+:   */
+/*   ft_d_lstadd_back.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/26 00:45:32 by jaeskim           #+#    #+#             */
-/*   Updated: 2021/03/20 12:25:47 by jaeskim          ###   ########.fr       */
+/*   Created: 2021/03/20 12:23:56 by jaeskim           #+#    #+#             */
+/*   Updated: 2021/03/20 12:28:57 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LST_TYPE_H
-# define FT_LST_TYPE_H
+#include "libft.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <limits.h>
-
-typedef struct s_list
+void	ft_d_lstadd_back(t_d_list **lst, t_d_list *new_list)
 {
-	void			*content;
-	struct s_list	*next;
-}					t_list;
+	t_d_list	*last;
 
-#endif
+	if (*lst == NULL)
+	{
+		*lst = new_list;
+		return ;
+	}
+	last = ft_d_lstlast(*lst);
+	last->next = new_list;
+	new_list->prev = last;
+}
