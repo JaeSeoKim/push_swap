@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack.h                                            :+:      :+:    :+:   */
+/*   check_stack_sorted.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/20 13:10:55 by jaeskim           #+#    #+#             */
-/*   Updated: 2021/03/20 14:58:15 by jaeskim          ###   ########.fr       */
+/*   Created: 2021/03/20 14:54:40 by jaeskim           #+#    #+#             */
+/*   Updated: 2021/03/20 14:59:51 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STACK_H
-# define STACK_H
+#include "libft.h"
+#include "stack.h"
 
-# include "libft.h"
+int	check_stack_sorted(t_d_list *stack_a, t_d_list *stack_b)
+{
+	int	n;
 
-# define FT_INT_MAX 2147483647
-# define FT_INT_MIN -2147483648
-
-t_d_list	*create_stack_with_arg(int argc, char *argv[]);
-
-int			check_stack_sorted(t_d_list *stack_a, t_d_list *stack_b);
-
-#endif
+	if (stack_b != NULL || stack_a == NULL)
+		return (0);
+	n = (int)stack_a->content;
+	while (stack_a)
+	{
+		if (n > (int)stack_a->content)
+			return (0);
+		stack_a = stack_a->next;
+	}
+	return (1);
+}

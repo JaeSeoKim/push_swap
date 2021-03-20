@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 10:32:36 by jaeskim           #+#    #+#             */
-/*   Updated: 2021/03/20 14:46:53 by jaeskim          ###   ########.fr       */
+/*   Updated: 2021/03/20 15:00:24 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@ int	main(int argc, char *argv[])
 		return (0);
 	stack_a = create_stack_with_arg(argc, argv);
 	stack_b = NULL;
+	if (check_stack_sorted(stack_a, stack_b))
+		ft_putendl_fd("OK", 1);
+	else
+		ft_putendl_fd("KO", 1);
 	ft_d_lstclear(&stack_a, NULL);
 	ft_d_lstclear(&stack_b, NULL);
 	system("leaks checker");
