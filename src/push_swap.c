@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 07:10:59 by jaeskim           #+#    #+#             */
-/*   Updated: 2021/03/20 14:32:45 by jaeskim          ###   ########.fr       */
+/*   Updated: 2021/03/20 14:46:52 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@ int	main(int argc, char *argv[])
 	stack_b = NULL;
 	ft_d_lstclear(&stack_a, NULL);
 	ft_d_lstclear(&stack_b, NULL);
+	system("leaks push_swap");
 	return (0);
 }

@@ -6,12 +6,13 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 13:24:57 by jaeskim           #+#    #+#             */
-/*   Updated: 2021/03/20 14:32:22 by jaeskim          ###   ########.fr       */
+/*   Updated: 2021/03/20 14:39:05 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "stack.h"
+#include <stdio.h>
 
 static long	atoi_check(char *s)
 {
