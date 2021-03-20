@@ -131,3 +131,6 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/c,macos,linux,windows,assembler
 
+
+push_swap
+checker
