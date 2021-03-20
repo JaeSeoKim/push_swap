@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 10:29:01 by jaeskim           #+#    #+#             */
-/*   Updated: 2021/03/20 10:33:40 by jaeskim          ###   ########.fr       */
+/*   Updated: 2021/03/20 13:33:11 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 # define PUSH_SWAP_H
 
 # include "libft.h"
+# include "stack.h"
 
 #endif

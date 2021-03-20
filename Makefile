@@ -6,7 +6,7 @@
 #    By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/06 21:07:58 by jaeskim           #+#    #+#              #
-#    Updated: 2021/03/20 10:41:08 by jaeskim          ###   ########.fr        #
+#    Updated: 2021/03/20 13:53:50 by jaeskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,8 +39,8 @@ CFLAGS += -I $(LIBFT_INC_DIR)
 
 HEADERS = $(wildcard $(INC_DIR)/*.h)
 
-UTIL_DIR = $(SRC_DIR)/util
-UTIL_SRCS = $(wildcard $(UTIL_DIR)/*.c)
+STACK_DIR = $(SRC_DIR)/stack
+STACK_SRCS = $(wildcard $(STACK_DIR)/*.c)
 
 CHECKER_DIR = $(SRC_DIR)/checker
 CHECKER_SRCS = $(wildcard $(CHECKER_DIR)/*.c)
@@ -48,12 +48,12 @@ CHECKER_SRCS = $(wildcard $(CHECKER_DIR)/*.c)
 PUSH_SWAP_DIR = $(SRC_DIR)/push_swap
 PUSH_SWAP_SRCS = $(wildcard $(PUSH_SWAP_DIR)/*.c)
 
-CHECKER_SRCS := $(UTIL_SRCS)
-PUSH_SWAP_SRCS := $(UTIL_SRCS)
+CHECKER_SRCS := $(STACK_SRCS)
+PUSH_SWAP_SRCS := $(STACK_SRCS)
 
 vpath %.c \
 	$(SRC_DIR) \
-	$(UTIL_DIR) \
+	$(STACK_DIR) \
 	$(CHECKER_DIR)	\
 	$(PUSH_SWAP_DIR)
 
@@ -93,7 +93,7 @@ $(OBJ_DIR) :
 	@mkdir $(OBJ_DIR)
 
 $(OBJ_DIR)/%.o : %.c $(LIBFT_FILE) | $(OBJ_DIR)
-	@$(CC) $(CDEBUG) $(CFLAGS) $(LIBFT_FLAGS) -c $< -o $@
+	@$(CC) $(CDEBUG) $(CFLAGS) -c $< -o $@
 	@printf "$(LF)🚧 $(FG_TEXT)Create $(FG_TEXT_PRIMARY)$@ $(FG_TEXT)from $(FG_TEXT_PRIMARY)$<"
 
 $(CHECKER) : $(LIBFT_FILE) $(HEADERS) $(CHECKER_OBJS) $(SRC_DIR)/checker.c
