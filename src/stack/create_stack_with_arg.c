@@ -6,13 +6,11 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 13:24:57 by jaeskim           #+#    #+#             */
-/*   Updated: 2021/03/20 15:06:10 by jaeskim          ###   ########.fr       */
+/*   Updated: 2021/03/20 15:09:05 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "stack.h"
-#include <stdio.h>
 
 static void	put_error_with_clear(t_d_list *result)
 {

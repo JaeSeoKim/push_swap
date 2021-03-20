@@ -6,11 +6,10 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 14:54:40 by jaeskim           #+#    #+#             */
-/*   Updated: 2021/03/20 14:59:51 by jaeskim          ###   ########.fr       */
+/*   Updated: 2021/03/20 15:08:59 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "stack.h"
 
 int	check_stack_sorted(t_d_list *stack_a, t_d_list *stack_b)
