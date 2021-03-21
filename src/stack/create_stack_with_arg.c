@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 13:24:57 by jaeskim           #+#    #+#             */
-/*   Updated: 2021/03/20 15:09:05 by jaeskim          ###   ########.fr       */
+/*   Updated: 2021/03/21 21:21:44 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,19 @@ static void	put_error_with_clear(t_d_list *result)
 	ft_d_lstclear(&result, NULL);
 	ft_putendl_fd("Error", 2);
 	exit(1);
+}
+
+static void	duplicate_check(t_d_list *result, void *content)
+{
+	t_d_list	*curr;
+
+	curr = result;
+	while (curr)
+	{
+		if (curr->content == content)
+			put_error_with_clear(result);
+		curr = curr->next;
+	}
 }
 
 static long	atoi_check(char *s, t_d_list *result)
@@ -37,6 +50,7 @@ static long	atoi_check(char *s, t_d_list *result)
 	((flag == 1) && (n *= -1));
 	if (*s != '\0' || (n < FT_INT_MIN) || (n > FT_INT_MAX))
 		put_error_with_clear(result);
+	duplicate_check(result, (void *)n);
 	return (n);
 }
 

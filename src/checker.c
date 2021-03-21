@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 10:32:36 by jaeskim           #+#    #+#             */
-/*   Updated: 2021/03/20 15:53:32 by jaeskim          ###   ########.fr       */
+/*   Updated: 2021/03/21 21:22:00 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,5 @@ int	main(int argc, char *argv[])
 		ft_putendl_fd("ERROR", 2);
 	ft_d_lstclear(&stack_a, NULL);
 	ft_d_lstclear(&stack_b, NULL);
-	system("leaks checker");
 	return (0);
 }
