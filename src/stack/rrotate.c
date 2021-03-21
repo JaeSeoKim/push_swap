@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   rrotate.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 17:19:53 by jaeskim           #+#    #+#             */
-/*   Updated: 2021/03/21 17:47:16 by jaeskim          ###   ########.fr       */
+/*   Updated: 2021/03/21 17:46:29 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stack.h"
 
-void	rotate(t_d_list **stack)
+void	rrotate(t_d_list **stack)
 {
-	t_d_list	*tmp;
+	t_d_list	*last;
 
 	if (*stack == NULL || (*stack)->next == NULL)
 		return ;
-	tmp = *stack;
-	*stack = (*stack)->next;
-	(*stack)->prev = NULL;
-	tmp->next = NULL;
-	tmp->prev = ft_d_lstlast(*stack);
-	tmp->prev->next = tmp;
+	last = ft_d_lstlast(*stack);
+	(*stack)->prev = last;
+	last->prev->next = NULL;
+	last->prev = NULL;
+	last->next = (*stack);
+	*stack = last;
 }
