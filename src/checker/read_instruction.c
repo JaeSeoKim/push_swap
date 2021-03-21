@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 15:08:43 by jaeskim           #+#    #+#             */
-/*   Updated: 2021/03/21 17:19:19 by jaeskim          ###   ########.fr       */
+/*   Updated: 2021/03/21 17:24:47 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,15 @@ static int	switch_instruction(
 	{
 		swap(*stack_a);
 		swap(*stack_b);
+	}
+	else if (!ft_strcmp(instruction, "ra"))
+		rotate(stack_a);
+	else if (!ft_strcmp(instruction, "rb"))
+		rotate(stack_b);
+	else if (!ft_strcmp(instruction, "rr"))
+	{
+		rotate(stack_a);
+		rotate(stack_b);
 	}
 	else
 		return (1);
