@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 15:08:43 by jaeskim           #+#    #+#             */
-/*   Updated: 2021/03/22 20:10:43 by jaeskim          ###   ########.fr       */
+/*   Updated: 2021/03/22 21:01:15 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ t_list	*read_instruction(void)
 		ft_lstadd_back(&instructions, tmp);
 		gnl_status = get_next_line(0, &instruction);
 	}
-	if (gnl_status == -1)
+	if (ft_strlen(instruction) || gnl_status == -1)
 		put_error_with_clear(instructions, NULL);
 	free(instruction);
 	return (instructions);
