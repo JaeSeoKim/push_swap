@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 15:08:43 by jaeskim           #+#    #+#             */
-/*   Updated: 2021/03/21 22:38:56 by jaeskim          ###   ########.fr       */
+/*   Updated: 2021/03/22 20:10:43 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,6 @@ t_list	*read_instruction(void)
 
 	instructions = NULL;
 	gnl_status = get_next_line(0, &instruction);
-	instructions = ft_lstnew(instruction);
-	if (instructions == NULL)
-		put_error_with_clear(instructions, instruction);
 	while (gnl_status > 0)
 	{
 		tmp = ft_lstnew(instruction);
