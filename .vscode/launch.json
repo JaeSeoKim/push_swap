@@ -8,12 +8,12 @@
       "name": "test checker",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/checker",
-      "args": ["4", "3", "2", "1"],
+      "program": "${workspaceFolder}/push_swap",
+      "args": ["4 67 3 87 23"],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",
       "environment": [],
-      "externalConsole": true,
+      "externalConsole": false,
       "MIMode": "lldb",
       "preLaunchTask": "build push_swap, checker"
     }

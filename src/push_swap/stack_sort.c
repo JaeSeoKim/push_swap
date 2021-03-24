@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   stack_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/19 07:10:59 by jaeskim           #+#    #+#             */
-/*   Updated: 2021/03/24 09:46:53 by jaeskim          ###   ########.fr       */
+/*   Created: 2021/03/22 21:25:20 by jaeskim           #+#    #+#             */
+/*   Updated: 2021/03/24 15:36:57 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char *argv[])
+void	stack_sort(t_d_list *stack_a, t_d_list *stack_b)
 {
-	t_d_list	*stack_a;
-	t_d_list	*stack_b;
-
-	if (argc < 2)
-		return (0);
-	stack_a = create_stack_with_arg(argc, argv);
-	stack_b = NULL;
-	stack_sort(stack_a, stack_b);
-	ft_d_lstclear(&stack_a, NULL);
-	ft_d_lstclear(&stack_b, NULL);
-	return (0);
+	int i = 0;
+	while (!check_stack_sorted(stack_a, stack_b)&& ++i < 100)
+	{
+		if ((int)stack_a->content > (int)stack_a->next->content)
+		{
+			ft_putendl_fd("sa", 1);
+			swap(stack_a);
+		}
+		ft_putendl_fd("rra", 1);
+		rrotate(&stack_a);
+	}
 }
