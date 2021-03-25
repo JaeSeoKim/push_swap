@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 11:46:37 by jaeskim           #+#    #+#             */
-/*   Updated: 2021/03/20 14:22:16 by jaeskim          ###   ########.fr       */
+/*   Updated: 2021/03/24 20:38:49 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_d_list	*ft_d_lstnew(void	*content);
 void		ft_d_lstadd_front(t_d_list **lst, t_d_list *new_list);
 void		ft_d_lstadd_back(t_d_list **lst, t_d_list *new_list);
 
-int			ft_d_size(t_d_list *lst);
+int			ft_d_lstsize(t_d_list *lst);
 t_d_list	*ft_d_lstlast(t_d_list *lst);
 
 void		ft_d_lstdelone(t_d_list *lst, void (*del)(void*));

@@ -6,7 +6,7 @@
 #    By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/24 20:10:49 by jaeskim           #+#    #+#              #
-#    Updated: 2021/03/20 14:22:44 by jaeskim          ###   ########.fr        #
+#    Updated: 2021/03/24 20:46:42 by jaeskim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -135,7 +135,7 @@ SRC_D_LST = $(addprefix $(SRC_D_LST_DIR)/, \
 	ft_d_lstnew.c	\
 	ft_d_lstadd_front.c	\
 	ft_d_lstadd_back.c	\
-	ft_d_size.c	\
+	ft_d_lstsize.c	\
 	ft_d_lstlast.c	\
 	ft_d_lstdelone.c	\
 	ft_d_lstclear.c	\
