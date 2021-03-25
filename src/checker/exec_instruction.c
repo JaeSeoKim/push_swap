@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 15:08:43 by jaeskim           #+#    #+#             */
-/*   Updated: 2021/03/23 18:15:45 by jaeskim          ###   ########.fr       */
+/*   Updated: 2021/03/24 22:12:00 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,13 +70,11 @@ int	exec_instruction(
 {
 	int		instruction_err;
 
-	print_stacks(*stack_a, *stack_b);
 	while (instructions)
 	{
 		instruction_err = switch_instruction(\
 			instructions->content, stack_a, stack_b);
 		ft_putendl_fd(instructions->content, 1);
-		print_stacks(*stack_a, *stack_b);
 		if (instruction_err)
 			return (0);
 		instructions = instructions->next;
