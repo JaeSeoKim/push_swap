@@ -6,15 +6,15 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 17:03:44 by jaeskim           #+#    #+#             */
-/*   Updated: 2021/03/21 17:06:04 by jaeskim          ###   ########.fr       */
+/*   Updated: 2021/06/11 18:17:01 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stack.h"
 
-void	swap(t_d_list *stack)
+void	swap(t_stack *stack)
 {
-	void	*content_tmp;
+	int	content_tmp;
 
 	if (stack == NULL || stack->next == NULL)
 		return ;

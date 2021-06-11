@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 13:24:57 by jaeskim           #+#    #+#             */
-/*   Updated: 2021/03/24 20:30:40 by jaeskim          ###   ########.fr       */
+/*   Updated: 2021/06/11 18:15:33 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,19 @@ static void	ft_split_clean(char **split)
 	free(split);
 }
 
-static void	put_error_with_clear(t_d_list *result, char **split)
+static void	put_error_with_clear(t_stack *result, char **split)
 {
-	ft_d_lstclear(&result, NULL);
+	stack_clear(&result, NULL);
 	ft_putendl_fd("Error", 2);
 	ft_split_clean(split);
 	exit(1);
 }
 
-static long	atoi_check(char *s, t_d_list *result, char **split)
+static long	atoi_check(char *s, t_stack *result, char **split)
 {
-	t_d_list	*curr;
-	char		flag;
-	t_ll		n;
+	t_stack	*curr;
+	char	flag;
+	t_ll	n;
 
 	flag = 0;
 	n = 0;
@@ -52,19 +52,19 @@ static long	atoi_check(char *s, t_d_list *result, char **split)
 	curr = result;
 	while (curr)
 	{
-		if (curr->content == (void *)n)
+		if (curr->content == n)
 			put_error_with_clear(result, split);
 		curr = curr->next;
 	}
 	return (n);
 }
 
-t_d_list	*create_stack_with_arg(int argc, char *argv[])
+t_stack	*create_stack_with_arg(int argc, char *argv[])
 {
-	int			rv[2];
-	char		**split;
-	t_d_list	*result;
-	t_d_list	*tmp;
+	int		rv[2];
+	char	**split;
+	t_stack	*result;
+	t_stack	*tmp;
 
 	result = NULL;
 	rv[0] = 0;
@@ -76,10 +76,10 @@ t_d_list	*create_stack_with_arg(int argc, char *argv[])
 		rv[1] = -1;
 		while (split[++rv[1]])
 		{
-			tmp = ft_d_lstnew((void *)atoi_check(split[rv[1]], result, split));
+			tmp = stack_new((void *)atoi_check(split[rv[1]], result, split));
 			if (tmp == NULL)
 				put_error_with_clear(result, split);
-			ft_d_lstadd_back(&result, tmp);
+			stack_add_back(&result, tmp);
 		}
 		ft_split_clean(split);
 	}

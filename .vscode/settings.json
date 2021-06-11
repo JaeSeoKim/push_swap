@@ -5,6 +5,7 @@
     "libft.h": "c",
     "stack.h": "c",
     "checker.h": "c",
-    "ft_string.h": "c"
+    "ft_string.h": "c",
+    "stab.h": "c"
   }
 }

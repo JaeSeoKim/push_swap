@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   stack_add_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/21 17:19:53 by jaeskim           #+#    #+#             */
-/*   Updated: 2021/06/11 18:14:01 by jaeskim          ###   ########.fr       */
+/*   Created: 2021/03/20 12:23:56 by jaeskim           #+#    #+#             */
+/*   Updated: 2021/06/11 18:14:17 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stack.h"
 
-void	rotate(t_stack **stack)
+void	stack_add_back(t_stack **lst, t_stack *new_list)
 {
-	t_stack	*tmp;
+	t_stack	*last;
 
-	if (*stack == NULL || (*stack)->next == NULL)
+	if (*lst == NULL)
+	{
+		*lst = new_list;
 		return ;
-	tmp = *stack;
-	*stack = (*stack)->next;
-	(*stack)->prev = NULL;
-	tmp->next = NULL;
-	tmp->prev = stack_last(*stack);
-	tmp->prev->next = tmp;
+	}
+	last = stack_last(*lst);
+	last->next = new_list;
+	new_list->prev = last;
 }
