@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 15:08:43 by jaeskim           #+#    #+#             */
-/*   Updated: 2021/03/24 22:12:00 by jaeskim          ###   ########.fr       */
+/*   Updated: 2021/06/12 21:51:39 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static int	switch_instruction_2(
 	char *instruction,
-	t_d_list **stack_a,
-	t_d_list **stack_b)
+	t_stack **stack_a,
+	t_stack **stack_b)
 {
 	if (!ft_strcmp(instruction, "ra"))
 		rotate(stack_a);
@@ -42,8 +42,8 @@ static int	switch_instruction_2(
 
 static int	switch_instruction(
 	char *instruction,
-	t_d_list **stack_a,
-	t_d_list **stack_b)
+	t_stack **stack_a,
+	t_stack **stack_b)
 {
 	if (!ft_strcmp(instruction, "pa"))
 		push(stack_b, stack_a);
@@ -65,8 +65,8 @@ static int	switch_instruction(
 
 int	exec_instruction(
 	t_list *instructions,
-	t_d_list **stack_a,
-	t_d_list **stack_b)
+	t_stack **stack_a,
+	t_stack **stack_b)
 {
 	int		instruction_err;
 

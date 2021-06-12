@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 13:24:57 by jaeskim           #+#    #+#             */
-/*   Updated: 2021/06/11 18:15:33 by jaeskim          ###   ########.fr       */
+/*   Updated: 2021/06/12 21:37:52 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void	ft_split_clean(char **split)
 
 static void	put_error_with_clear(t_stack *result, char **split)
 {
-	stack_clear(&result, NULL);
+	stack_clear(&result);
 	ft_putendl_fd("Error", 2);
 	ft_split_clean(split);
 	exit(1);
@@ -61,22 +61,22 @@ static long	atoi_check(char *s, t_stack *result, char **split)
 
 t_stack	*create_stack_with_arg(int argc, char *argv[])
 {
-	int		rv[2];
+	int		iv[2];
 	char	**split;
 	t_stack	*result;
 	t_stack	*tmp;
 
 	result = NULL;
-	rv[0] = 0;
-	while (++rv[0] < argc)
+	iv[0] = 0;
+	while (++iv[0] < argc)
 	{
-		split = ft_split(argv[rv[0]], ' ');
+		split = ft_split(argv[iv[0]], ' ');
 		if (split == NULL)
 			put_error_with_clear(result, split);
-		rv[1] = -1;
-		while (split[++rv[1]])
+		iv[1] = -1;
+		while (split[++iv[1]])
 		{
-			tmp = stack_new((void *)atoi_check(split[rv[1]], result, split));
+			tmp = stack_new(atoi_check(split[iv[1]], result, split));
 			if (tmp == NULL)
 				put_error_with_clear(result, split);
 			stack_add_back(&result, tmp);
