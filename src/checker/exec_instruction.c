@@ -6,74 +6,40 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 15:08:43 by jaeskim           #+#    #+#             */
-/*   Updated: 2021/06/13 22:36:08 by jaeskim          ###   ########.fr       */
+/*   Updated: 2021/06/14 00:12:19 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-static int	switch_instruction_2(
-	char *instruction,
-	t_stack **stack_a,
-	t_stack **stack_b)
+static int	switch_instruction(char *instruction, t_push_swap *data)
 {
-	if (!ft_strcmp(instruction, "ra"))
-		rotate(stack_a);
-	else if (!ft_strcmp(instruction, "rb"))
-		rotate(stack_b);
-	else if (!ft_strcmp(instruction, "rr"))
+	if (!ft_strcmp(instruction, "pa") || \
+		!ft_strcmp(instruction, "pb") || \
+		!ft_strcmp(instruction, "sa") || \
+		!ft_strcmp(instruction, "sb") || \
+		!ft_strcmp(instruction, "ss") || \
+		!ft_strcmp(instruction, "ra") || \
+		!ft_strcmp(instruction, "rb") || \
+		!ft_strcmp(instruction, "rr") || \
+		!ft_strcmp(instruction, "rra") || \
+		!ft_strcmp(instruction, "rrb") || \
+		!ft_strcmp(instruction, "rrr"))
 	{
-		rotate(stack_a);
-		rotate(stack_b);
+		operator(instruction, data);
+		return (0);
 	}
-	else if (!ft_strcmp(instruction, "rra"))
-		rrotate(stack_a);
-	else if (!ft_strcmp(instruction, "rrb"))
-		rrotate(stack_b);
-	else if (!ft_strcmp(instruction, "rrr"))
-	{
-		rrotate(stack_a);
-		rrotate(stack_b);
-	}
-	else
-		return (1);
-	return (0);
+	return (1);
 }
 
-static int	switch_instruction(
-	char *instruction,
-	t_stack **stack_a,
-	t_stack **stack_b)
-{
-	if (!ft_strcmp(instruction, "pa"))
-		push(stack_b, stack_a);
-	else if (!ft_strcmp(instruction, "pb"))
-		push(stack_a, stack_b);
-	else if (!ft_strcmp(instruction, "sa"))
-		swap(*stack_a);
-	else if (!ft_strcmp(instruction, "sb"))
-		swap(*stack_b);
-	else if (!ft_strcmp(instruction, "ss"))
-	{
-		swap(*stack_a);
-		swap(*stack_b);
-	}
-	else
-		return (switch_instruction_2(instruction, stack_a, stack_b));
-	return (0);
-}
-
-int	exec_instruction(
-	t_list *instructions,
-	t_stack **stack_a,
-	t_stack **stack_b)
+int	exec_instruction(t_list *instructions, t_push_swap *data)
 {
 	int		instruction_err;
 
 	while (instructions)
 	{
 		instruction_err = switch_instruction(\
-			instructions->content, stack_a, stack_b);
+			instructions->content, data);
 		if (instruction_err)
 			return (0);
 		instructions = instructions->next;

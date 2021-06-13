@@ -6,11 +6,11 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/11 22:28:43 by jaeskim           #+#    #+#             */
-/*   Updated: 2021/06/13 22:08:00 by jaeskim          ###   ########.fr       */
+/*   Updated: 2021/06/14 00:16:51 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "stack.h"
 
 void	operator(char *op, t_push_swap *data)
 {
@@ -30,11 +30,12 @@ void	operator(char *op, t_push_swap *data)
 		swap(data->a);
 	if (!ft_strcmp(op, "sb") || !ft_strcmp(op, "ss"))
 		swap(data->b);
-	if (data->visualizer)
+	if (data->visualizer == VISUAL)
 	{
 		system("clear");
 		print_stacks(data->a, data->b);
 		usleep(VISUAL_SPEED);
 	}
-	ft_putendl_fd(op, 1);
+	if (data->visualizer == OP)
+		ft_putendl_fd(op, 1);
 }

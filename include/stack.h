@@ -6,7 +6,7 @@
 /*   By: jaeskim <jaeskim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 13:10:55 by jaeskim           #+#    #+#             */
-/*   Updated: 2021/06/12 21:51:36 by jaeskim          ###   ########.fr       */
+/*   Updated: 2021/06/14 00:14:56 by jaeskim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,13 @@
 
 # include "libft.h"
 
-# define FT_INT_MAX 2147483647
-# define FT_INT_MIN -2147483648
+# define VISUAL_SPEED	100000
+
+# define FT_INT_MAX 	2147483647
+# define FT_INT_MIN 	-2147483648
+
+# define OP		1
+# define VISUAL	2
 
 typedef struct s_stack
 {
@@ -24,6 +29,13 @@ typedef struct s_stack
 	struct s_stack	*prev;
 	int				content;
 }				t_stack;
+
+typedef struct s_push_swap
+{
+	t_stack		*a;
+	t_stack		*b;
+	int			visualizer;
+}				t_push_swap;
 
 t_stack	*create_stack_with_arg(int argc, char *argv[]);
 
@@ -42,5 +54,6 @@ int		stack_size(t_stack *lst);
 t_stack	*stack_last(t_stack *lst);
 
 void	stack_clear(t_stack **lst);
+void	operator(char *op, t_push_swap *data);
 
 #endif
